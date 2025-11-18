@@ -80,7 +80,7 @@ FrontEnd/
     |
     ├── layouts
     |
-    ├── pages
+    ├── pages             # page แต่ละหน้า
     |
     ├── provider
     |
