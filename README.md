@@ -34,12 +34,10 @@ BackEnd/
 ├── controllers/            #Https Request Handler
 │   └── ..._controller.go
 |
-|
 ├── database/               # Database connection / migration
 │   ├── mongo.go
 │   └── sql.go              (สำหรับ อนาคต)
 │
-|
 ├── dto/                    # Data Transfer Objects (Request/Response/Model structs)
 │   ├── model.go            # Model OF Collection 
 │   ├── reg.go              # Request Body Query Parser
@@ -54,7 +52,6 @@ BackEnd/
 ├── service/                # Business logic / Use Cases
 │   ├── port.go             # Primary Port 
 │   └── ..._service.go      # Primary Adapter
-│
 │
 ├── routes/                 # Route definitions
 │   └── routes.go
