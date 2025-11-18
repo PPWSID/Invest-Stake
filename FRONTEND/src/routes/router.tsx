@@ -86,7 +86,7 @@ const routes: RouteObject[] = [
 ];
 
 const options: { basename: string } = {
-  basename: '/invest-stake',
+  basename: '/',
 };
 
 const router: Partial<RouterProps> = createBrowserRouter(routes, options);
