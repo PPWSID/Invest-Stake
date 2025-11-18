@@ -69,8 +69,8 @@ FrontEnd/
     ├── assets              # IMG Fonts Icons
     |
     ├── components/
-    |           ├──base
-    |           ├──  common
+    |           ├── base
+    |           ├── common
     |           ├── icons
     |           └── loading    
     |
