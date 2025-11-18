@@ -6,13 +6,12 @@ Investment calculation & future income prediction system
 ## 🧠 Overview  
 **Invest-Stake** คือระบบสำหรับคำนวณการลงทุนและคาดการณ์รายได้ในอนาคต  
 สร้างด้วยภาษา **Golang** โดยใช้แนวทาง **Hexagonal Architecture (Ports & Adapters)**  
-เพื่อให้โครงสร้างสะอาด แยกความรับผิดชอบชัดเจน และขยายระบบได้ในอนาคต  
-
+โครงหน้าบ้านเบื้องต้นสำหรับระบบเขียนด้วย **React + TypeScript** (Vite) — เน้นโครงสร้างไฟล์, ตัวอย่าง component/route, และการเชื่อมต่อกับ backend ผ่าน `axios`.
 ---
 
 ## 🧩 Architecture  
 Hexagonal Architecture (Clean / Ports & Adapters)
-
+React TSX
 ---
 
 BackEnd : Haxagonal Golang Structure 
@@ -33,12 +32,12 @@ BackEnd/
 |
 |
 ├── database/               # Database connection / migration
-│   └── mongo.go
+│   ├── mongo.go
 │   └── sql.go              (สำหรับ อนาคต)
 │
 |
 ├── dto/                    # Data Transfer Objects (Request/Response/Model structs)
-│   └── model.go            # Model OF Collection 
+│   ├── model.go            # Model OF Collection 
 │   ├── reg.go              # Request Body Query Parser
 │   └── res.go              # Respone
 │
@@ -59,4 +58,36 @@ BackEnd/
 ├── main.go
 ├── go.mod
 └── go.sum
+```
+
+
+
+```
+FrontEnd/
+├── public/
+└── src/
+    ├── assets              # IMG Fonts Icons
+    |
+    ├── components/
+    |           ├──base
+    |           ├──  common
+    |           ├── icons
+    |           └── loading    
+    |
+    ├── data/               # Mock Data Before Scripts
+    |
+    ├── helpers
+    |
+    ├── layouts
+    |
+    ├── pages
+    |
+    ├── provider
+    |
+    ├── routes
+    |
+    └── theme
+
+
+
 ```
