@@ -19,27 +19,24 @@ func main() {
 	cfg, _ := config.SetConfig()
 	app := fiber.New()
 
-	// ✅ เพิ่ม CORS middleware โดยใช้ config จาก .env
 	app.Use(cors.New(cors.Config{
 		AllowOrigins: cfg.App.Cors.AllowOrigins,
 		AllowHeaders: "Origin, Content-Type, Accept, Authorization",
 		AllowMethods: "GET, POST, PUT, DELETE, OPTIONS",
 	}))
 
-	// ✅ Connect MongoDB
 	db, err := database.ConnectMongo(*cfg)
 	if err != nil {
 		log.Fatalf("MongoDB connection error: %v", err)
 	}
-
-	testRepo := repository.NewtestRepositoryDB(db)
-	testService := service.NewtestService(testRepo)
-	testHandler := controller.NewtestController(testService)
-	routes.TestRoutes(app, cfg, testHandler)
-
+	
+	investRepo := repository.NewinvestRepositoryDB(db)
+	investService := service.NewinvestService(investRepo)
+	investHandler := controller.NewinvestController(investService)
+	routes.InvestRoutes(app, cfg, investHandler)
 	port := cfg.App.Port
-	fmt.Println("Start the server on port :" + port + " ✅")
-	fmt.Println("Checking TEST Controller ON : http://localhost:8806/test")
+	fmt.Println("Start the server on port :" + port + "Success")
+	fmt.Println("Checking INVEST Controller ON : http://localhost:" + port + "/api")
 	app.Listen(":" + port)
 
 }
